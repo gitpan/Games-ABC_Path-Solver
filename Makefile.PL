@@ -7,6 +7,7 @@ WriteMakefile
           'PREREQ_PM' => {
                            'Carp' => 0,
                            'Getopt::Long' => '2.36',
+                           'Test::Differences' => 0,
                            'Test::More' => 0,
                            'base' => 0
                          },
