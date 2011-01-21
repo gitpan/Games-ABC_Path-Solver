@@ -7,7 +7,7 @@ build_requires:
   Test::More: 0
 configure_requires:
   Module::Build: 0.36
-generated_by: 'Module::Build version 0.3607'
+generated_by: 'Module::Build version 0.3617'
 keywords:
   - abc
   - game
@@ -28,40 +28,44 @@ name: Games-ABC_Path-Solver
 provides:
   Games::ABC_Path::Solver:
     file: lib/Games/ABC_Path/Solver.pm
-    version: v0.0.2
+    version: v0.0.3
+  Games::ABC_Path::Solver::App:
+    file: lib/Games/ABC_Path/Solver/App.pm
+    version: v0.0.3
   Games::ABC_Path::Solver::Base:
     file: lib/Games/ABC_Path/Solver/Base.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Board:
     file: lib/Games/ABC_Path/Solver/Board.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move:
     file: lib/Games/ABC_Path/Solver/Move.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::LastRemainingCellForLetter:
     file: lib/Games/ABC_Path/Solver/Move/LastRemainingCellForLetter.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::LastRemainingLetterForCell:
     file: lib/Games/ABC_Path/Solver/Move/LastRemainingLetterForCell.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::LettersNotInVicinity:
     file: lib/Games/ABC_Path/Solver/Move/LettersNotInVicinity.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::ResultsInASuccess:
     file: lib/Games/ABC_Path/Solver/Move/ResultsInASuccess.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::ResultsInAnError:
     file: lib/Games/ABC_Path/Solver/Move/ResultsInAnError.pm
-    version: v0.0.2
+    version: v0.0.3
   Games::ABC_Path::Solver::Move::TryingLetterForCell:
     file: lib/Games/ABC_Path/Solver/Move/TryingLetterForCell.pm
-    version: v0.0.2
+    version: v0.0.3
 requires:
   Carp: 0
   Getopt::Long: 2.36
+  Pod::Usage: 0
   base: 0
 resources:
   homepage: http://www.shlomifish.org/open-source/projects/japanese-puzzle-games/abc-path/
-  license: http://opensource.org/licenses/mit-license.php
+  license: http://www.opensource.org/licenses/mit-license.php
   repository: http://svn.berlios.de/svnroot/repos/fc-solve/abc-path/
-version: v0.0.2
+version: v0.0.3

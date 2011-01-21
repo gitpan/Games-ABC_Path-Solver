@@ -10,6 +10,9 @@ my $builder = Test::Run::Builder->new(
     module_name         => 'Games::ABC_Path::Solver',
     license             => 'mit',
     dist_author         => 'Shlomi Fish <shlomif@cpan.org>',
+    configure_requires => {
+        'Module::Build' => '0.36',
+    },
     build_requires => {
         'Test::Differences' => 0,
         'Test::More' => 0,
@@ -18,6 +21,7 @@ my $builder = Test::Run::Builder->new(
         'base' => 0,
         'Carp' => 0,
         'Getopt::Long' => '2.36',
+        'Pod::Usage' => 0,
     },
     add_to_cleanup      => [ 'Games-Solitaire-Verify-*' ],
     create_makefile_pl => 'traditional',
