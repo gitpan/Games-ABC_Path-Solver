@@ -9,11 +9,11 @@ Games::ABC_Path::Solver::Move - an ABC Path move.
 
 =head1 VERSION
 
-Version 0.2.0
+Version 0.3.0
 
 =cut
 
-our $VERSION = '0.2.0';
+our $VERSION = '0.3.0';
 
 =head1 SYNOPSIS
 
@@ -133,7 +133,7 @@ sub _expand_format
     }
     elsif ($type eq "coords")
     {
-        return sprintf("(%d,%d)", $value->[0]+1, $value->[1]+1);
+        return sprintf("(%d,%d)", $value->x()+1, $value->y()+1);
     }
     else
     {

@@ -2,20 +2,20 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-  'PL_FILES' => {},
-  'INSTALLDIRS' => 'site',
   'NAME' => 'Games::ABC_Path::Solver',
+  'VERSION_FROM' => 'lib/Games/ABC_Path/Solver.pm',
+  'PREREQ_PM' => {
+                   'Carp' => 0,
+                   'Getopt::Long' => '2.36',
+                   'Pod::Usage' => 0,
+                   'Test::Differences' => 0,
+                   'Test::More' => 0,
+                   'base' => 0
+                 },
+  'INSTALLDIRS' => 'site',
   'EXE_FILES' => [
                    'scripts/abc-path-solve'
                  ],
-  'VERSION_FROM' => 'lib/Games/ABC_Path/Solver.pm',
-  'PREREQ_PM' => {
-                   'base' => 0,
-                   'Test::More' => 0,
-                   'Getopt::Long' => '2.36',
-                   'Test::Differences' => 0,
-                   'Pod::Usage' => 0,
-                   'Carp' => 0
-                 }
+  'PL_FILES' => {}
 )
 ;

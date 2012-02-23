@@ -1,14 +1,13 @@
-package Games::ABC_Path::Solver::Move::TryingLetterForCell;
+package Games::ABC_Path::Solver::Coord;
 
-use strict;
 use warnings;
+use strict;
 
-use base 'Games::ABC_Path::Solver::Move';
+use base 'Games::ABC_Path::Solver::Base';
 
 =head1 NAME
 
-Games::ABC_Path::Solver::Move::TryingLetterForCell - an ABC Path move
-of trying a letter for a certain cell.
+Games::ABC_Path::Solver::Coord - X/Y coordinate class for the ABC Path classes.
 
 =head1 VERSION
 
@@ -20,32 +19,83 @@ our $VERSION = '0.3.0';
 
 =head1 SYNOPSIS
 
-    use Games::ABC_Path::Solver::Move::TryingLetterForCell;
+    use base 'Games::ABC_Path::Solver::Base';
 
-    my $move = Games::ABC_Path::Solver::Move::TryingLetterForCell->new(
-        {
-            vars =>
-            {
-                coords => [1,2],
-                letter => 5,
-            },
-        }
-    );
+    sub _init
+    {
 
-=head1 DESCRIPTION
+    }
 
-This is a move that indicates that we are attempting to solve the game by
-trying to put the letter C<'letter'> in the coordinate C<'coords'>.
+=head1 FUNCTIONS
 
 =cut
 
-sub _format {
-    return "We have non-conclusive cells. Trying %(letter){letter} for %(coords){coords}.";
+use integer;
+
+=head2 $coord->x()
+
+B<For internal use>.
+
+=cut
+
+sub x
+{
+    my $self = shift;
+
+    if (@_)
+    {
+        $self->{x} = shift;
+    }
+
+    return $self->{x};
+}
+
+=head2 $coord->y()
+
+B<For internal use>.
+
+=cut
+
+
+sub y
+{
+    my $self = shift;
+
+    if (@_)
+    {
+        $self->{'y'} = shift;
+    }
+
+    return $self->{'y'};
+}
+
+sub _to_s
+{
+    my $self = shift;
+
+    return sprintf("%d,%d", $self->x, $self->y);
+}
+
+sub _init
+{
+    my ($self,$args) = @_;
+
+    $self->x($args->{x});
+    $self->y($args->{'y'});
+
+    return;
+}
+
+sub _equal
+{
+    my ($self,$other_xy) = @_;
+
+    return (($self->x == $other_xy->x) && ($self->y == $other_xy->y));
 }
 
 =head1 AUTHOR
 
-Shlomi Fish, C<< <shlomif at cpan.org> >>
+Shlomi Fish, L<http://www.shlomifish.org/>
 
 =head1 BUGS
 
@@ -53,11 +103,14 @@ Please report any bugs or feature requests to C<bug-games-abc_path-solver at rt.
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Games-ABC_Path-Solver>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
+
+
+
 =head1 SUPPORT
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Games::ABC_Path::Solver::Move
+    perldoc Games::ABC_Path::Solver::Coord
 
 
 You can also look for information at:
@@ -117,5 +170,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 =cut
 
-1;
-
+1; # End of Games::ABC_Path::Solver::Base
