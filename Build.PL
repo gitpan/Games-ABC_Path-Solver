@@ -9,6 +9,7 @@ use Test::Run::Builder;
 my $builder = Test::Run::Builder->new(
     module_name         => 'Games::ABC_Path::Solver',
     license             => 'mit',
+    dist_abstract       => 'A Solver for ABC Path',
     dist_author         => 'Shlomi Fish <shlomif@cpan.org>',
     configure_requires => {
         'Module::Build' => '0.36',
@@ -32,7 +33,7 @@ my $builder = Test::Run::Builder->new(
     {
         resources =>
         {
-            repository => "http://svn.berlios.de/svnroot/repos/fc-solve/abc-path/",
+            repository => "http://bitbucket.org/shlomif/abc-path",
             homepage => "http://www.shlomifish.org/open-source/projects/japanese-puzzle-games/abc-path/",
         },
         keywords =>

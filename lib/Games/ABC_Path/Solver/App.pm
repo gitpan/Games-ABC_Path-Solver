@@ -10,11 +10,11 @@ solving ABC Path
 
 =head1 VERSION
 
-Version 0.3.0
+Version 0.3.1
 
 =cut
 
-our $VERSION = '0.3.0';
+our $VERSION = '0.3.1';
 
 =head1 SYNOPSIS
 
@@ -32,7 +32,7 @@ our $VERSION = '0.3.0';
 =head2 new
 
 The constructor. Accepts a hash ref of named arguments. Currently only C<'argv'>
-which should point to an array ref of command-line arguments. 
+which should point to an array ref of command-line arguments.
 
 =head2 run
 
